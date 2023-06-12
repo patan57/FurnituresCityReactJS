@@ -1,13 +1,13 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
-function UncontrolledExample() {
+function CarouselContainer() {
     return (
         <Carousel>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="holder.js/800x400?text=First slide&bg=373940"
+                    src="https://i.postimg.cc/RhVYM9QD/home-g3110eacc2-1280.jpg"
                     alt="First slide"
                 />
                 <Carousel.Caption>
@@ -18,7 +18,7 @@ function UncontrolledExample() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="holder.js/800x400?text=Second slide&bg=282c34"
+                    src="https://i.postimg.cc/jjH3PCM1/living-room-g0478a31db-1280.jpg"
                     alt="Second slide"
                 />
 
@@ -30,7 +30,7 @@ function UncontrolledExample() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="holder.js/800x400?text=Third slide&bg=20232a"
+                    src="https://i.postimg.cc/4d4PcP7K/sofa-gbd074a7b9-1280.jpg"
                     alt="Third slide"
                 />
 
@@ -45,4 +45,4 @@ function UncontrolledExample() {
     );
 }
 
-export default UncontrolledExample;
+export default CarouselContainer;

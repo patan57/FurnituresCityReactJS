@@ -6,13 +6,13 @@ export const Footer = () => {
         <div className="foot">
         <p>Seguinos en nuestras redes</p>
         <a href="">
-            <i class="bi bi-instagram"></i>
+            <i className="bi bi-instagram"></i>
         </a>
         <a href="">
-            <i class="bi bi-whatsapp"></i>
+            <i className="bi bi-whatsapp"></i>
         </a>
         <a href="">
-            <i class="bi bi-facebook"></i>
+            <i className="bi bi-facebook"></i>
         </a>
         </div>
         </>

@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from "react";
-import CarouselContainer from "./Carousel";
-import ItemList from "./ItemList";
-
+import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 
 const muebles = [
@@ -13,37 +11,25 @@ const muebles = [
     {id: 6, image:"https://http2.mlstatic.com/D_NQ_NP_2X_805879-MLA54366636477_032023-F.webp", category:"deexterior", title: "Juego Jesuita" , text:"Formidable juego de mesa y sillas para exteriores, la comodidad de tomar un mate en tus espacios verdes"},
 ];
 
-export const ItemListContainer = ({greeting}) => {
-    const [data, setData] = useState([]);
 
-    const {categoriaId} = useParams();
+export const ItemDetailContainer = () => {
+    const [data, setData] = useState({});
 
-        useEffect(() => {
-            const getData = new Promise(resolve => {
-                setTimeout(() => {
-                    resolve(muebles)
-                }, 1000);
-            });
-            if (categoriaId) {
-                getData.then(res => setData(res.filter(mueble => mueble.category === categoriaId)));
-            } else {
-                getData.then(res => setData(res));
-            }
-        },[categoriaId])
-
-    const onAdd = (quantity) => {
-        console.log(`Compraste ${quantity}unidades`);
-    }
-    
-    return(
-        <>
-        <p>{greeting}</p>
-        
-        <CarouselContainer/>
-        <ItemList data={data} />
-        </>
-    )
-    };
+    const {detalleId} = useParams();
 
 
-export default ItemListContainer;
+    useEffect(() => {
+        const getData = new Promise(resolve => {
+            setTimeout(() => {
+                resolve(muebles)
+            }, 1000);
+        });
+        getData.then(res => setData(res.find(mueble => mueble.id === parseInt(detalleId))));
+    },[])
+
+    return (
+        <ItemDetail data={data} />
+    );
+}
+
+export default ItemDetailContainer;
