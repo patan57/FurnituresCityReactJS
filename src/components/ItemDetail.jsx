@@ -3,6 +3,7 @@ import React, {useState} from "react";
 // import Card from 'react-bootstrap/Card';
 import ItemCount from "./ItemCount"
 import { Link } from "react-router-dom";
+import { useCartContext } from "../context/CartContext";
 
 // function muebleDetailCard({data}) {
 
@@ -36,9 +37,11 @@ import { Link } from "react-router-dom";
 
 export const ItemDetail = ({data}) => {
     const [goToCart, setGoToCart] = useState(false);
+    const {addMueble} = useCartContext();
 
     const onAdd = (quantity) => {
         setGoToCart(true);
+        addMueble(data, quantity);
     }
 
         return (

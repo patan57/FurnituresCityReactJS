@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
 function muebleCard({info}) {
     return (
