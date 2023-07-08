@@ -22,7 +22,7 @@ function App() {
       {/* <Route path='/' element={} /> */}
     </Routes>
     </CartProvider>
-    <Footer />
+    {/* <Footer /> */}
     </BrowserRouter>
     </>
   );
